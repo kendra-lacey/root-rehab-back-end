@@ -1,4 +1,4 @@
-const { Plant } = require('../models')
+const { Plant, Comment } = require('../models')
 const cloudinary = require('cloudinary').v2
 
 
@@ -27,8 +27,17 @@ const addPlantPhoto = async(req, res) =>{
     }
   }
 
+  const createComment = async(req,res) => {
+    try {
+      
+    } catch (error) {
+      res.status(500).json(err);
+    }
+  }
+
 
 module.exports = {
   createPlant,
   addPlantPhoto,
+  createComment
 }
