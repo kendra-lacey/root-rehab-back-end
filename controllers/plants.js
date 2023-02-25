@@ -19,7 +19,7 @@ const addPlantPhoto = async(req, res) =>{
     const plant = await Plant.findById(req.params.id)
     const image = await cloudinary.uploader.upload(imageFile, {tags: 'plant photo'});
     plant.photo = image.url;
-    await rec.save();
+    await plant.save();
     res.status(201).json(rec)
     } catch (err) {
         console.error(err);
