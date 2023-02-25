@@ -27,21 +27,22 @@ const addPlantPhoto = async(req, res) =>{
     }
   }
 
-  const createComment = async (req, res) => {
-    try {
-      req.body.userId = req.user.profileId;
-      req.body.plantId = req.params.plantId;
-      const comment = await Comment.create(req.body);
-      res.status(200).json(comment);
-    } catch (error) {
-      res.status(500).json({ err: error });
-    }
-  };
+
+  
+  
+      
+  
+  
+  
+  
+  
+  
+  
+  
   
 
 
 module.exports = {
   createPlant,
   addPlantPhoto,
-  createComment
 }
