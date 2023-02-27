@@ -12,6 +12,15 @@ async function createPlant(req, res) {
     res.status(500).json({ err: error })
   }
 }
+async function index(req, res) {
+  try {
+    const plants = await Plant.findAll()
+    res.status(200).json(plants)
+  } catch (error) {
+    console.log(error)
+    res.status(500).json({ err: error })
+  }
+}
 
 const addPlantPhoto = async(req, res) =>{
   try {
@@ -28,21 +37,8 @@ const addPlantPhoto = async(req, res) =>{
   }
 
 
-  
-  
-      
-  
-  
-  
-  
-  
-  
-  
-  
-  
-
-
 module.exports = {
   createPlant,
+  index,
   addPlantPhoto,
 }

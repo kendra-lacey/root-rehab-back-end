@@ -9,6 +9,7 @@ const { decodeUserFromToken, checkAuth } = middleware
 
 /*---------- Protected Routes ----------*/
 router.use(decodeUserFromToken)
+router.get('/', checkAuth, plantsCtrl.index)
 router.post('/', checkAuth, plantsCtrl.createPlant)
 router.put('/:id/add-photo', checkAuth, plantsCtrl.addPlantPhoto)
 
