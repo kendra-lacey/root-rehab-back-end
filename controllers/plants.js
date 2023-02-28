@@ -3,7 +3,7 @@ const cloudinary = require('cloudinary').v2
 
 
 async function createPlant(req, res) {
-  console.log('weeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee2')
+  console.log
   try {
     req.body.profileId = req.user.profile.id
     const plant = await Plant.create(req.body)
@@ -24,7 +24,7 @@ async function index(req, res) {
 }
 
 const addPlantPhoto = async(req, res) =>{
-  console.log('weeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee')
+  console.log
   try {
     const imageFile = req.files.photo.path
     console.log(req.params)
@@ -41,9 +41,14 @@ const addPlantPhoto = async(req, res) =>{
     }
   }
 
+  const deletePlant = async(req,res) =>{
+
+  }
+
 
 module.exports = {
   createPlant,
   index,
   addPlantPhoto,
+  deletePlant 
 }

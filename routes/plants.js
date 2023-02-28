@@ -12,6 +12,6 @@ router.use(decodeUserFromToken)
 router.get('/', checkAuth, plantsCtrl.index)
 router.post('/', checkAuth, plantsCtrl.createPlant)
 router.put('/:id/add-photo', checkAuth, plantsCtrl.addPlantPhoto)
-router.delete('/:id', checkAuth, plantsCtrl.delete)
+router.delete('/:id', checkAuth, plantsCtrl.deletePlant)
 
 module.exports = router
