@@ -42,8 +42,14 @@ const addPlantPhoto = async(req, res) =>{
   }
 
   const deletePlant = async(req,res) =>{
-
+    try {
+    const plant = await Plant.findByPk(req.params.id)
+    await plant.destroy()
+    res.status(200).json(plant)
+  } catch (error) {
+    res.status(500).json(error)
   }
+}
 
 
 module.exports = {
