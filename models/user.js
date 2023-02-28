@@ -13,12 +13,12 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate(models) {
       User.hasOne(models.Profile, { as: 'profile', foreignKey: 'userId' })
-      
-    User.hasMany(models.Plant, {
-      as: 'plantsOwned',
-      foreignKey: 'userId',
-      onDelete: 'CASCADE',
-    });
+
+    // User.hasMany(models.Plant, {
+    //   as: 'plantsOwned',
+    //   foreignKey: 'userId',
+    //   onDelete: 'CASCADE',
+    // });
 
     }
 

@@ -23,7 +23,7 @@ module.exports = (sequelize, DataTypes) => {
         max: 5,
       },
     },
-    pIantId: {
+    plantId: {
       type: DataTypes.INTEGER,
       allowNull: false,
       onDelete: 'CASCADE',

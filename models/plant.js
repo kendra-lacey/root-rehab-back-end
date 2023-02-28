@@ -16,6 +16,11 @@ module.exports = (sequelize, DataTypes) => {
         as: 'commentsCreated',
         foreignKey: 'plantId',
       })
+
+      Plant.hasMany(models.Health, {
+        as: 'healthRecords',
+        foreignKey: 'healthId',
+      })
     }
   }
   Plant.init({
