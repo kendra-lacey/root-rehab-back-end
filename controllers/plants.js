@@ -3,7 +3,6 @@ const cloudinary = require('cloudinary').v2
 
 
 async function createPlant(req, res) {
-  console.log
   try {
     req.body.profileId = req.user.profile.id
     const plant = await Plant.create(req.body)
