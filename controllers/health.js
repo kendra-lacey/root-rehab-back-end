@@ -1,8 +1,6 @@
 const { Health , Plant } = require('../models');
 const user = require('../models/user');
 
-
-
 async function setHealth(req, res) {
   try {
     //Optionally add query whether the passed plantId belongs to req.user.id

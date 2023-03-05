@@ -1,4 +1,5 @@
 const { Plant, Comment } = require('../models')
+const { setHealth } = require('./health')
 const cloudinary = require('cloudinary').v2
 
 
@@ -14,7 +15,9 @@ async function createPlant(req, res) {
 }
 async function index(req, res) {
   try {
-    const plants = await Plant.findAll()
+    const plants = await Plant.findAll({
+      include: [{ model: Health, as: "healthRecords" }],
+    })
     res.status(200).json(plants)
   } catch (error) {
     console.log(error)
