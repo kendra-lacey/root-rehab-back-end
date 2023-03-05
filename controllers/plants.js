@@ -1,5 +1,4 @@
-const { Plant, Comment } = require('../models')
-const { setHealth } = require('./health')
+const { Plant, Health } = require('../models')
 const cloudinary = require('cloudinary').v2
 
 
